@@ -1,0 +1,26 @@
+# Build outputs
+build/
+app/build/
+.gradle/
+
+# IDE
+.idea/
+*.iml
+local.properties
+
+# Generated files
+*.class
+*.apk
+*.aar
+*.ap_
+*.dex
+
+# Gradle
+.cxx/
+*.m3
+*.m2
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db

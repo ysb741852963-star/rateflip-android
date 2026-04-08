@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">RateFlip</string>
+
+    <!-- Converter Screen -->
+    <string name="last_updated_format">上次更新：%1$s</string>
+    <string name="exchange_rate_format">💱 1 %1$s → %2$.2f %3$s</string>
+    <string name="updated_format">更新时间：%1$s</string>
+    <string name="quick_convert">💡 快捷转换</string>
+    <string name="more_currencies">📊 更多货币</string>
+    <string name="toast_already_latest">✓ 已是最新的！</string>
+    <string name="toast_rates_updated">✓ %1$s</string>
+    <string name="app_title">💱 RateFlip</string>
+    <string name="ad_placeholder">AdMob 广告位 (320x50)</string>
+    <string name="select_currency">选择货币</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">设置</string>
+    <string name="back">返回</string>
+    <string name="settings_theme">主题</string>
+    <string name="select_language">选择语言</string>
+    <string name="select_theme">选择主题</string>
+    <string name="cancel">取消</string>
+    <string name="appearance">外观</string>
+    <string name="language">语言</string>
+    <string name="general">通用</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="cache_size">已缓存 %1$s</string>
+    <string name="reset_to_default">恢复默认</string>
+    <string name="reset_settings_desc">重置所有设置</string>
+    <string name="legal">法律</string>
+    <string name="privacy_policy">隐私政策</string>
+    <string name="privacy_policy_desc">查看我们的隐私政策</string>
+    <string name="terms_of_service">服务条款</string>
+    <string name="terms_of_service_desc">查看使用条款</string>
+    <string name="about">关于</string>
+    <string name="about_rateflip">关于 RateFlip</string>
+    <string name="version_format">版本 %1$s</string>
+    <string name="contact_us">联系我们</string>
+    <string name="contact_email">support@rateflip.com</string>
+    <string name="ad_settings">广告设置</string>
+    <string name="about_ads">关于广告</string>
+    <string name="about_ads_desc">我们展示广告以支持免费应用</string>
+    <string name="ad_personalization">广告个性化</string>
+    <string name="ad_personalization_desc">管理您的广告偏好</string>
+
+    <!-- Theme options -->
+    <string name="theme_system_default">跟随系统</string>
+    <string name="theme_system_desc">跟随系统设置</string>
+    <string name="theme_light">浅色</string>
+    <string name="theme_light_desc">始终使用浅色主题</string>
+    <string name="theme_dark">深色</string>
+    <string name="theme_dark_desc">始终使用深色主题</string>
+
+    <!-- Snackbar messages -->
+    <string name="snackbar_cache_cleared">缓存已清除！</string>
+    <string name="snackbar_settings_reset">设置已恢复默认！</string>
+    <string name="snackbar_coming_soon">即将上线！</string>
+    <string name="snackbar_rateflip_version">RateFlip v%1$s</string>
+    <string name="snackbar_contact">联系方式：%1$s</string>
+    <string name="snackbar_ads_help">广告帮助保持应用免费！</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_refresh">刷新</string>
+    <string name="cd_settings">设置</string>
+    <string name="cd_swap">交换</string>
+    <string name="cd_back">返回</string>
+    <string name="close">关闭</string>
+
+    <!-- Legal content -->
+    <string name="privacy_policy_content">RateFlip 隐私政策
+
+最后更新：2026年4月7日
+
+1. 我们收集的信息
+RateFlip 不会收集您的任何个人信息。应用仅在您的设备上本地存储您的偏好设置（主题和语言设置）。
+
+2. 汇率数据
+我们从第三方 API 获取汇率数据。我们无法控制或保证第三方汇率数据的准确性。
+
+3. 本地存储
+您的设置（主题、语言）使用 SharedPreferences 存储在本地设备上。不会将任何数据传输到我们的服务器。
+
+4. 广告
+我们通过 Google AdMob 展示广告。Google 可能会收集和使用数据用于广告个性化。更多信息请参阅 Google 的隐私政策。
+
+5. 联系我们
+如对本隐私政策有任何疑问，请联系：support@rateflip.com</string>
+    <string name="terms_of_service_content">RateFlip 服务条款
+
+最后更新：2026年4月7日
+
+1. 条款接受
+使用 RateFlip 应用即表示您同意本服务条款。
+
+2. 汇率免责声明
+RateFlip 提供的汇率仅供参考。我们不保证汇率数据的准确性、完整性或及时性。用户在做财务决策前应通过官方渠道核实汇率。
+
+3. 应用使用
+您同意仅将 RateFlip 用于合法目的，并遵守本条款。
+
+4. 知识产权
+RateFlip 及其内容、功能和设计归 RateFlip 所有，受版权和其他知识产权法律保护。
+
+5. 责任限制
+对于因使用本应用提供的汇率信息而产生的任何决策，RateFlip 不承担责任。
+
+6. 条款变更
+我们保留随时修改本条款的权利。继续使用应用即表示接受修改后的条款。
+
+7. 联系方式
+如对本条款有任何疑问，请联系：support@rateflip.com</string>
+</resources>

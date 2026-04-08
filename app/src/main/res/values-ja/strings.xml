@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">RateFlip</string>
+
+    <!-- Converter Screen -->
+    <string name="last_updated_format">最終更新: %1$s</string>
+    <string name="exchange_rate_format">💱 1 %1$s → %2$.2f %3$s</string>
+    <string name="updated_format">更新: %1$s</string>
+    <string name="quick_convert">💡 クイック変換</string>
+    <string name="more_currencies">📊 他の通貨</string>
+    <string name="toast_already_latest">✓ すでに最新です！</string>
+    <string name="toast_rates_updated">✓ %1$s</string>
+    <string name="app_title">💱 RateFlip</string>
+    <string name="ad_placeholder">AdMob バナー広告 (320x50)</string>
+    <string name="select_currency">通貨を選択</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">設定</string>
+    <string name="back">戻る</string>
+    <string name="select_language">言語を選択</string>
+    <string name="settings_theme">Theme</string>
+    <string name="select_theme">テーマを選択</string>
+    <string name="cancel">キャンセル</string>
+    <string name="appearance">外観</string>
+    <string name="language">言語</string>
+    <string name="general">一般</string>
+    <string name="clear_cache">キャッシュをクリア</string>
+    <string name="cache_size">%1$s キャッシュ済み</string>
+    <string name="reset_to_default">デフォルトにリセット</string>
+    <string name="reset_settings_desc">すべての設定をリセット</string>
+    <string name="legal">法的情報</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="privacy_policy_desc">プライバシーポリシーを見る</string>
+    <string name="terms_of_service">利用規約</string>
+    <string name="terms_of_service_desc">利用規約を見る</string>
+    <string name="about">アプリについて</string>
+    <string name="about_rateflip">RateFlipについて</string>
+    <string name="version_format">バージョン %1$s</string>
+    <string name="contact_us">お問い合わせ</string>
+    <string name="contact_email">support@rateflip.com</string>
+    <string name="ad_settings">広告設定</string>
+    <string name="about_ads">広告について</string>
+    <string name="about_ads_desc">無料アプリを支援するために広告を表示しています</string>
+    <string name="ad_personalization">広告のパーソナライズ</string>
+    <string name="ad_personalization_desc">広告の基本設定を管理</string>
+
+    <!-- Theme options -->
+    <string name="theme_system_default">システムのデフォルト</string>
+    <string name="theme_system_desc">システム設定に従う</string>
+    <string name="theme_light">ライト</string>
+    <string name="theme_light_desc">常にライトテーマを使用</string>
+    <string name="theme_dark">ダーク</string>
+    <string name="theme_dark_desc">常にダークテーマを使用</string>
+
+    <!-- Snackbar messages -->
+    <string name="snackbar_cache_cleared">キャッシュがクリアされました！</string>
+    <string name="snackbar_settings_reset">設定がデフォルトにリセットされました！</string>
+    <string name="snackbar_coming_soon">もうすぐ公開！</string>
+    <string name="snackbar_rateflip_version">RateFlip v%1$s</string>
+    <string name="snackbar_contact">連絡先: %1$s</string>
+    <string name="snackbar_ads_help">広告がアプリを無料で維持するのに役立ちます！</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_refresh">更新</string>
+    <string name="cd_settings">設定</string>
+    <string name="cd_swap">交換</string>
+    <string name="close">閉じる</string>
+
+    <!-- Legal content -->
+    <string name="privacy_policy_content">RateFlip Privacy Policy
+
+Last updated: April 7, 2026
+
+1. Information We Collect
+RateFlip does not collect any personal information. The app only stores your preferences locally on your device.
+
+2. Exchange Rate Data
+We obtain exchange rate data from third-party APIs. We do not guarantee the accuracy of third-party exchange rate data.
+
+3. Local Storage
+Your settings are stored locally using SharedPreferences. No data is transmitted to our servers.
+
+4. Advertisements
+We display advertisements through Google AdMob. Google may collect and use data for ad personalization.
+
+5. Contact Us
+For questions about this privacy policy, please contact: support@rateflip.com</string>
+    <string name="terms_of_service_content">RateFlip Terms of Service
+
+Last updated: April 7, 2026
+
+1. Acceptance of Terms
+By using RateFlip, you agree to these terms of service.
+
+2. Exchange Rate Disclaimer
+Exchange rates are for informational purposes only. We do not guarantee accuracy. Users should verify rates with official sources.
+
+3. Use of the App
+You agree to use RateFlip only for lawful purposes.
+
+4. Intellectual Property
+RateFlip and its content are protected by copyright laws.
+
+5. Limitation of Liability
+RateFlip shall not be liable for any decisions made based on exchange rate information.
+
+6. Changes to Terms
+We reserve the right to modify these terms at any time.
+
+7. Contact
+For questions, please contact: support@rateflip.com</string>
+
+</resources>

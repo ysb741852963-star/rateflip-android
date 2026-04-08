@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">RateFlip</string>
+
+    <!-- Converter Screen -->
+    <string name="last_updated_format">آخر تحديث: %1$s</string>
+    <string name="exchange_rate_format">💱 1 %1$s → %2$.2f %3$s</string>
+    <string name="updated_format">تم التحديث: %1$s</string>
+    <string name="quick_convert">💡 تحويل سريع</string>
+    <string name="more_currencies">📊 عملات إضافية</string>
+    <string name="toast_already_latest">✓ بالفعل أحدث إصدار!</string>
+    <string name="toast_rates_updated">✓ %1$s</string>
+    <string name="app_title">💱 RateFlip</string>
+    <string name="ad_placeholder">إعلان AdMob البانر (320x50)</string>
+    <string name="select_currency">اختر العملة</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">الإعدادات</string>
+    <string name="back">رجوع</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="settings_theme">Theme</string>
+    <string name="select_theme">اختر السمة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="appearance">المظهر</string>
+    <string name="language">اللغة</string>
+    <string name="general">عام</string>
+    <string name="clear_cache">مسح ذاكرة التخزين</string>
+    <string name="cache_size">تم تخزين %1$s</string>
+    <string name="reset_to_default">استعادة الإعدادات الافتراضية</string>
+    <string name="reset_settings_desc">إعادة تعيين جميع الإعدادات</string>
+    <string name="legal">قانوني</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="privacy_policy_desc">عرض سياسة الخصوصية</string>
+    <string name="terms_of_service">شروط الخدمة</string>
+    <string name="terms_of_service_desc">عرض شروط الاستخدام</string>
+    <string name="about">حول</string>
+    <string name="about_rateflip">حول RateFlip</string>
+    <string name="version_format">الإصدار %1$s</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="contact_email">support@rateflip.com</string>
+    <string name="ad_settings">إعدادات الإعلانات</string>
+    <string name="about_ads">حول الإعلانات</string>
+    <string name="about_ads_desc">نعرض الإعلانات لدعم التطبيق المجاني</string>
+    <string name="ad_personalization">تخصيص الإعلانات</string>
+    <string name="ad_personalization_desc">إدارة تفضيلات الإعلانات</string>
+
+    <!-- Theme options -->
+    <string name="theme_system_default">افتراضي النظام</string>
+    <string name="theme_system_desc">اتبع إعدادات النظام</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_light_desc">استخدم سمة فاتحة دائمًا</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_dark_desc">استخدم سمة داكنة دائمًا</string>
+
+    <!-- Snackbar messages -->
+    <string name="snackbar_cache_cleared">تم مسح ذاكرة التخزين!</string>
+    <string name="snackbar_settings_reset">تمت إعادة تعيين الإعدادات!</string>
+    <string name="snackbar_coming_soon">قريبًا!</string>
+    <string name="snackbar_rateflip_version">RateFlip v%1$s</string>
+    <string name="snackbar_contact">الاتصال: %1$s</string>
+    <string name="snackbar_ads_help">الإعلانات تساعد في إبقاء التطبيق مجانيًا!</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_refresh">تحديث</string>
+    <string name="cd_settings">الإعدادات</string>
+    <string name="cd_swap">تبديل</string>
+    <string name="close">إغلاق</string>
+
+    <!-- Legal content -->
+    <string name="privacy_policy_content">RateFlip Privacy Policy
+
+Last updated: April 7, 2026
+
+1. Information We Collect
+RateFlip does not collect any personal information. The app only stores your preferences locally on your device.
+
+2. Exchange Rate Data
+We obtain exchange rate data from third-party APIs. We do not guarantee the accuracy of third-party exchange rate data.
+
+3. Local Storage
+Your settings are stored locally using SharedPreferences. No data is transmitted to our servers.
+
+4. Advertisements
+We display advertisements through Google AdMob. Google may collect and use data for ad personalization.
+
+5. Contact Us
+For questions about this privacy policy, please contact: support@rateflip.com</string>
+    <string name="terms_of_service_content">RateFlip Terms of Service
+
+Last updated: April 7, 2026
+
+1. Acceptance of Terms
+By using RateFlip, you agree to these terms of service.
+
+2. Exchange Rate Disclaimer
+Exchange rates are for informational purposes only. We do not guarantee accuracy. Users should verify rates with official sources.
+
+3. Use of the App
+You agree to use RateFlip only for lawful purposes.
+
+4. Intellectual Property
+RateFlip and its content are protected by copyright laws.
+
+5. Limitation of Liability
+RateFlip shall not be liable for any decisions made based on exchange rate information.
+
+6. Changes to Terms
+We reserve the right to modify these terms at any time.
+
+7. Contact
+For questions, please contact: support@rateflip.com</string>
+
+</resources>
