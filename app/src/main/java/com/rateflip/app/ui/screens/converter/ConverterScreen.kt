@@ -5,6 +5,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -550,8 +551,16 @@ private fun CurrencyPickerSheet(
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
+        }
 
-            currencies.forEach { currency ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .navigationBarsPadding()
+                .imePadding()
+        ) {
+            items(currencies) { currency ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -574,12 +583,12 @@ private fun CurrencyPickerSheet(
                     }
                 }
 
-                if (currency != currencies.last()) {
-                    Divider()
-                }
+                Divider()
             }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            item {
+                Spacer(modifier = Modifier.height(32.dp))
+            }
         }
     }
 }
