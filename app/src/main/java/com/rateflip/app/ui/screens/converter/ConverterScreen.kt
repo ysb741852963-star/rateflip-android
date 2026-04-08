@@ -540,7 +540,10 @@ private fun CurrencyPickerSheet(
         sheetState = sheetState
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier
+                .padding(16.dp)
+                .navigationBarsPadding()
+                .imePadding()
         ) {
             Text(
                 text = stringResource(R.string.select_currency),
