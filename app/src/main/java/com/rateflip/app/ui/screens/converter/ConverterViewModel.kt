@@ -6,6 +6,7 @@ import com.rateflip.app.data.model.Currency
 import com.rateflip.app.data.model.CurrencyList
 import com.rateflip.app.data.repository.ExchangeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,6 +31,10 @@ class ConverterViewModel @Inject constructor(
     // 换算次数计数（用于插页广告）
     private var conversionCount = 0
 
+    // 请求去重：追踪当前有效的加载任务
+    private var loadRatesJob: Job? = null
+    private var currentLoadId: Int = 0
+
     init {
         loadRates()
     }
@@ -50,16 +55,22 @@ class ConverterViewModel @Inject constructor(
 
     /**
      * 加载汇率
+     * @param forceToCode 可选，指定目标货币（用于去重）
      */
-    private fun loadRates() {
-        viewModelScope.launch {
+    private fun loadRates(forceToCode: String? = null) {
+        loadRatesJob?.cancel()
+        loadRatesJob = viewModelScope.launch {
             _state.update { it.copy(isLoading = true, error = null) }
 
             val fromCode = _state.value.fromCurrency.code
-            val toCode = _state.value.toCurrency.code
+            val toCode = forceToCode ?: _state.value.toCurrency.code
+            val loadId = ++currentLoadId
 
             repository.getRates(fromCode)
                 .onSuccess { data ->
+                    // 忽略过时响应
+                    if (loadId != currentLoadId) return@launch
+
                     val rate = data.rates[toCode] ?: getFallbackRate(toCode)
                     val updatedTime = formatTimestamp(data.timestamp)
 
@@ -76,6 +87,9 @@ class ConverterViewModel @Inject constructor(
                     }
                 }
                 .onFailure { e ->
+                    // 忽略过时响应
+                    if (loadId != currentLoadId) return@launch
+
                     // 网络错误时使用 fallback 汇率，避免转换结果为 0
                     val fallbackRate = getFallbackRate(toCode)
                     _state.update { state ->
@@ -163,26 +177,29 @@ class ConverterViewModel @Inject constructor(
      */
     private fun swapCurrencies() {
         _state.update { state ->
-            // 保存原始输入金额
-            val originalFromAmount = state.fromAmount
-            // 只交换货币，不交换金额
+            // 交换货币，金额不清除（保持 fromAmount 不变）
             state.copy(
                 fromCurrency = state.toCurrency,
                 toCurrency = state.fromCurrency,
-                // 保持 fromAmount 不变，重新计算 toAmount
-                fromAmount = originalFromAmount,
+                // toAmount 会通过 loadRates 回调更新
                 toAmount = ""
             )
         }
-        // 重新加载汇率并计算
-        loadRates()
+        // 用新的 toCode 加载汇率（用于去重）
+        loadRates(forceToCode = _state.value.fromCurrency.code)
     }
 
     /**
      * 选择源货币
      */
     private fun selectFromCurrency(currency: Currency) {
-        _state.update { it.copy(fromCurrency = currency) }
+        _state.update { state ->
+            // 立即用当前汇率重算，让 UI 即时响应
+            state.copy(
+                fromCurrency = currency,
+                toAmount = calculateResult(state.fromAmount, state.exchangeRate)
+            )
+        }
         loadRates()
     }
 
@@ -190,8 +207,15 @@ class ConverterViewModel @Inject constructor(
      * 选择目标货币
      */
     private fun selectToCurrency(currency: Currency) {
-        _state.update { it.copy(toCurrency = currency) }
-        loadRates()
+        _state.update { state ->
+            // 立即用当前汇率重算，让 UI 即时响应
+            state.copy(
+                toCurrency = currency,
+                toAmount = calculateResult(state.fromAmount, state.exchangeRate)
+            )
+        }
+        // 用新的 toCode 加载汇率（用于去重）
+        loadRates(forceToCode = currency.code)
         incrementConversionCount()
     }
 
