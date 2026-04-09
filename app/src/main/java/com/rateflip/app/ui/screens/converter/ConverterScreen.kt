@@ -470,7 +470,7 @@ private fun MoreCurrenciesGrid(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(CurrencyList.常用货币.filter { it.code != "USD" && it.code != "CNY" }) { currency ->
+        items(CurrencyList.常用货币.filter { it.code != "USD" }) { currency ->
             Surface(
                 modifier = Modifier
                     .clip(RoundedCornerShape(10.dp))

@@ -8,7 +8,7 @@ import com.rateflip.app.data.model.CurrencyList
  */
 data class ConverterState(
     val fromCurrency: Currency = CurrencyList.getByCode("USD")!!,
-    val toCurrency: Currency = CurrencyList.getByCode("EUR")!!,
+    val toCurrency: Currency = CurrencyList.getByCode("CAD")!!,
     val fromAmount: String = "",
     val toAmount: String = "",
     val exchangeRate: Double = 0.0,
