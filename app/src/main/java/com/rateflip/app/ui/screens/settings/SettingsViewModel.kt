@@ -34,10 +34,6 @@ class SettingsViewModel @Inject constructor(
         _language.value = language
     }
 
-    fun clearCache() {
-        repository.clearCache()
-    }
-
     fun resetToDefaults() {
         preferencesManager.resetAll()
         _theme.value = "system"

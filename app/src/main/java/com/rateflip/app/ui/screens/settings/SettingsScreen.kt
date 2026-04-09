@@ -267,18 +267,6 @@ fun SettingsScreen(
             item {
                 SettingsSection(titleRes = R.string.general) {
                     SettingsItem(
-                        icon = "\uD83D\uDCD1",
-                        iconBackground = Color(0xFFFFF3E0),
-                        titleRes = R.string.clear_cache,
-                        subtitle = stringResource(R.string.cache_size, "12.5 MB"),
-                        onClick = {
-                            viewModel.clearCache()
-                            scope.launch {
-                                snackbarHostState.showSnackbar(context.getString(R.string.snackbar_cache_cleared))
-                            }
-                        }
-                    )
-                    SettingsItem(
                         icon = "\uD83D\uDD04",
                         iconBackground = Color(0xFFE8F5E9),
                         titleRes = R.string.reset_to_default,

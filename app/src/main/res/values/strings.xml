@@ -25,8 +25,7 @@
     <string name="appearance">Appearance</string>
     <string name="language">Language</string>
     <string name="general">General</string>
-    <string name="clear_cache">Clear Cache</string>
-    <string name="cache_size">%1$s cached</string>
+
     <string name="reset_to_default">Reset to Default</string>
     <string name="reset_settings_desc">Reset all settings</string>
     <string name="legal">Legal</string>
@@ -54,7 +53,7 @@
     <string name="theme_dark_desc">Always use dark theme</string>
 
     <!-- Snackbar messages -->
-    <string name="snackbar_cache_cleared">Cache cleared!</string>
+
     <string name="snackbar_settings_reset">Settings reset to default!</string>
     <string name="snackbar_coming_soon">Coming soon!</string>
     <string name="snackbar_rateflip_version">RateFlip v%1$s</string>
