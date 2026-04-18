@@ -21,8 +21,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
     
-    // TODO: 正式部署时替换为实际后端地址
-    private const val BASE_URL = "http://192.168.12.1:8080/"
+    // 腾讯云生产环境
+    private const val BASE_URL = "http://43.166.247.35:48180/"
     
     @Provides
     @Singleton
