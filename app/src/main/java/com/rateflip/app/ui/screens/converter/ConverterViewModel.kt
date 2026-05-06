@@ -176,17 +176,22 @@ class ConverterViewModel @Inject constructor(
      * 交换货币
      */
     private fun swapCurrencies() {
+        val previousFromAmount = _state.value.fromAmount
+        val previousRate = _state.value.exchangeRate
+
         _state.update { state ->
-            // 交换货币，金额不清除（保持 fromAmount 不变）
+            // 交换货币
+            val newFromCurrency = state.toCurrency
+            val newToCurrency = state.fromCurrency
             state.copy(
-                fromCurrency = state.toCurrency,
-                toCurrency = state.fromCurrency,
-                // toAmount 会通过 loadRates 回调更新
-                toAmount = ""
+                fromCurrency = newFromCurrency,
+                toCurrency = newToCurrency,
+                // 交换后立即用当前汇率计算出新的 toAmount，让 UI 即时响应
+                toAmount = calculateResult(previousFromAmount, previousRate)
             )
         }
-        // 用新的 toCode 加载汇率（用于去重）
-        loadRates(forceToCode = _state.value.fromCurrency.code)
+        // 用新的 toCurrency.code 加载汇率（用于去重）
+        loadRates(forceToCode = _state.value.toCurrency.code)
     }
 
     /**
