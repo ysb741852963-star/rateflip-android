@@ -1,5 +1,6 @@
 package com.rateflip.app.ui.screens.converter
 
+import android.view.ViewGroup
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
@@ -25,12 +26,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.rateflip.app.R
 import com.rateflip.app.data.model.Currency
 import com.rateflip.app.data.model.CurrencyList
@@ -501,24 +508,48 @@ private fun MoreCurrenciesGrid(
 }
 
 /**
- * 底部广告位占位
+ * 底部Banner广告
  */
 @Composable
 private fun BannerAdPlaceholder() {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        color = MaterialTheme.colorScheme.surfaceVariant
-    ) {
-        Box(
-            contentAlignment = Alignment.Center
+    val context = LocalContext.current
+
+    var adInitialized by remember { mutableStateOf(false) }
+
+    LaunchedEffect(Unit) {
+        MobileAds.initialize(context) {}
+        adInitialized = true
+    }
+
+    if (adInitialized) {
+        AndroidView(
+            factory = { ctx ->
+                AdView(ctx).apply {
+                    adUnitId = "ca-app-pub-2223464266330139/2608188948"
+                    setAdSize(AdSize.BANNER)
+                    loadAd(AdRequest.Builder().build())
+                }
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp)
+        )
+    } else {
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            color = MaterialTheme.colorScheme.surfaceVariant
         ) {
-            Text(
-                text = stringResource(R.string.ad_placeholder),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
-            )
+            Box(
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = stringResource(R.string.ad_loading),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+                )
+            }
         }
     }
 }

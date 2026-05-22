@@ -13,6 +13,7 @@
     <string name="toast_rates_updated">✓ %1$s</string>
     <string name="app_title">💱 RateFlip</string>
     <string name="ad_placeholder">AdMob Banner Ad (320x50)</string>
+    <string name="ad_loading">Loading ads…</string>
     <string name="select_currency">Select Currency</string>
 
     <!-- Settings Screen -->
